@@ -32,16 +32,16 @@
             align-items: center;
         }
         
-        .language-switch img {
-            width: 24px;
-            height: 16px;
+        .language-switch span {
+            font-size: 1.5rem;
             margin: 0 5px;
             cursor: pointer;
-            border: 1px solid transparent;
+            opacity: 0.6;
+            transition: opacity 0.3s;
         }
         
-        .language-switch img.active {
-            border-color: #333;
+        .language-switch span.active {
+            opacity: 1;
         }
         
         h1 {
@@ -94,8 +94,8 @@
         <header>
             <h1>Alessandro Casti</h1>
             <div class="language-switch">
-                <img src="/api/placeholder/24/16" alt="Italiano" class="active" id="it-flag">
-                <img src="/api/placeholder/24/16" alt="English" id="en-flag">
+                <span class="active" id="it-flag">🇮🇹</span>
+                <span id="en-flag">🇬🇧</span>
             </div>
         </header>
         
