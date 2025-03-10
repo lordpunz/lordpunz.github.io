@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog di Alessandro Casti</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- MathJax per la notazione matematica -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1><a href="index.html">Alessandro Casti</a></h1>
+            </div>
+            
+            <!-- Aggiunto il selettore di lingua -->
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active" data-lang="it">Blog</a></li>
+                        <li><a href="categories.html" data-lang="it">Categorie</a></li>
+                        <li><a href="about.html" data-lang="it">About</a></li>
+                        <li><a href="contact.html" data-lang="it">Contatti</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="language-switch">
+                    <span class="active" id="it-flag">🇮🇹</span>
+                    <span id="en-flag">🇬🇧</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contenuto italiano -->
+        <main id="content-it" class="content active">
+            <div class="blog-container">
+                <div class="posts-section">
+                    <h2>Articoli Recenti</h2>
+                    
+                    <!-- Esempio di post con matematica -->
+                    <article class="post">
+                        <h3><a href="posts/esempio-matematica.html">La bellezza delle equazioni differenziali</a></h3>
+                        <div class="post-meta">
+                            <span class="date">10 Marzo 2025</span>
+                            <span class="categories"><a href="categories.html?cat=matematica">Matematica</a>, <a href="categories.html?cat=fisica">Fisica</a></span>
+                        </div>
+                        <div class="post-excerpt">
+                            <p>In questo articolo esploriamo la soluzione dell'equazione di Schrödinger \( i\hbar\frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat{H}\Psi(\mathbf{r},t) \) e le sue implicazioni nella meccanica quantistica...</p>
+                        </div>
+                        <a href="posts/esempio-matematica.html" class="read-more">Continua a leggere →</a>
+                    </article>
+                    
+                    <!-- Esempio di altro post -->
+                    <article class="post">
+                        <h3><a href="posts/esempio-secondo.html">Un altro argomento interessante</a></h3>
+                        <div class="post-meta">
+                            <span class="date">5 Marzo 2025</span>
+                            <span class="categories"><a href="categories.html?cat=informatica">Informatica</a></span>
+                        </div>
+                        <div class="post-excerpt">
+                            <p>Un breve riassunto di questo articolo che parla di qualcosa di completamente diverso...</p>
+                        </div>
+                        <a href="posts/esempio-secondo.html" class="read-more">Continua a leggere →</a>
+                    </article>
+                    
+                    <!-- Paginazione (per il futuro) -->
+                    <div class="pagination">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">→</a>
+                    </div>
+                </div>
+                
+                <aside class="sidebar">
+                    <div class="widget categories">
+                        <h4>Categorie</h4>
+                        <ul>
+                            <li><a href="categories.html?cat=matematica">Matematica</a></li>
+                            <li><a href="categories.html?cat=fisica">Fisica</a></li>
+                            <li><a href="categories.html?cat=informatica">Informatica</a></li>
+                            <li><a href="categories.html?cat=altro">Altro</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="widget recent-posts">
+                        <h4>Post Recenti</h4>
+                        <ul>
+                            <li><a href="posts/esempio-matematica.html">La bellezza delle equazioni differenziali</a></li>
+                            <li><a href="posts/esempio-secondo.html">Un altro argomento interessante</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <!-- Contenuto inglese -->
+        <main id="content-en" class="content">
+            <div class="blog-container">
+                <div class="posts-section">
+                    <h2>Recent Articles</h2>
+                    
+                    <!-- Esempio di post con matematica in inglese -->
+                    <article class="post">
+                        <h3><a href="posts/example-math.html">The Beauty of Differential Equations</a></h3>
+                        <div class="post-meta">
+                            <span class="date">March 10, 2025</span>
+                            <span class="categories"><a href="categories.html?cat=mathematics">Mathematics</a>, <a href="categories.html?cat=physics">Physics</a></span>
+                        </div>
+                        <div class="post-excerpt">
+                            <p>In this article we explore the solution of the Schrödinger equation \( i\hbar\frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat{H}\Psi(\mathbf{r},t) \) and its implications in quantum mechanics...</p>
+                        </div>
+                        <a href="posts/example-math.html" class="read-more">Continue reading →</a>
+                    </article>
+                    
+                    <!-- Esempio di altro post in inglese -->
+                    <article class="post">
+                        <h3><a href="posts/example-second.html">Another Interesting Topic</a></h3>
+                        <div class="post-meta">
+                            <span class="date">March 5, 2025</span>
+                            <span class="categories"><a href="categories.html?cat=computer-science">Computer Science</a></span>
+                        </div>
+                        <div class="post-excerpt">
+                            <p>A brief summary of this article that discusses something completely different...</p>
+                        </div>
+                        <a href="posts/example-second.html" class="read-more">Continue reading →</a>
+                    </article>
+                    
+                    <!-- Paginazione (per il futuro) -->
+                    <div class="pagination">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">→</a>
+                    </div>
+                </div>
+                
+                <aside class="sidebar">
+                    <div class="widget categories">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="categories.html?cat=mathematics">Mathematics</a></li>
+                            <li><a href="categories.html?cat=physics">Physics</a></li>
+                            <li><a href="categories.html?cat=computer-science">Computer Science</a></li>
+                            <li><a href="categories.html?cat=other">Other</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="widget recent-posts">
+                        <h4>Recent Posts</h4>
+                        <ul>
+                            <li><a href="posts/example-math.html">The Beauty of Differential Equations</a></li>
+                            <li><a href="posts/example-second.html">Another Interesting Topic</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Alessandro Casti</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const itFlag = document.getElementById('it-flag');
+            const enFlag = document.getElementById('en-flag');
+            const contentIt = document.getElementById('content-it');
+            const contentEn = document.getElementById('content-en');
+            
+            itFlag.addEventListener('click', function() {
+                contentIt.classList.add('active');
+                contentEn.classList.remove('active');
+                itFlag.classList.add('active');
+                enFlag.classList.remove('active');
+                document.documentElement.lang = 'it';
+                updateNavLinks('it');
+            });
+            
+            enFlag.addEventListener('click', function() {
+                contentEn.classList.add('active');
+                contentIt.classList.remove('active');
+                enFlag.classList.add('active');
+                itFlag.classList.remove('active');
+                document.documentElement.lang = 'en';
+                updateNavLinks('en');
+            });
+            
+            function updateNavLinks(lang) {
+                const navLinks = document.querySelectorAll('nav ul li a');
+                navLinks.forEach(link => {
+                    if (lang === 'en') {
+                        if (link.getAttribute('href') === 'index.html') link.textContent = 'Blog';
+                        if (link.getAttribute('href') === 'categories.html') link.textContent = 'Categories';
+                        if (link.getAttribute('href') === 'about.html') link.textContent = 'About';
+                        if (link.getAttribute('href') === 'contact.html') link.textContent = 'Contact';
+                    } else {
+                        if (link.getAttribute('href') === 'index.html') link.textContent = 'Blog';
+                        if (link.getAttribute('href') === 'categories.html') link.textContent = 'Categorie';
+                        if (link.getAttribute('href') === 'about.html') link.textContent = 'About';
+                        if (link.getAttribute('href') === 'contact.html') link.textContent = 'Contatti';
+                    }
+                    link.setAttribute('data-lang', lang);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

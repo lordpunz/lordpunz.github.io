@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorie - Blog di Alessandro Casti</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1><a href="index.html">Alessandro Casti</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="categories.html" class="active">Categorie</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="categories-section">
+                <h2>Categorie</h2>
+                
+                <div class="category-list">
+                    <div class="category-item" id="all-cat">
+                        <h3><a href="#" class="active" data-category="all">Tutti gli articoli</a></h3>
+                    </div>
+                    <div class="category-item" id="cat-matematica">
+                        <h3><a href="#" data-category="matematica">Matematica</a></h3>
+                        <p>Articoli su teoria, problemi e applicazioni matematiche.</p>
+                    </div>
+                    <div class="category-item" id="cat-fisica">
+                        <h3><a href="#" data-category="fisica">Fisica</a></h3>
+                        <p>Esplorazioni di concetti e teorie fisiche.</p>
+                    </div>
+                    <div class="category-item" id="cat-informatica">
+                        <h3><a href="#" data-category="informatica">Informatica</a></h3>
+                        <p>Programmazione, algoritmi e tecnologie informatiche.</p>
+                    </div>
+                    <div class="category-item" id="cat-altro">
+                        <h3><a href="#" data-category="altro">Altro</a></h3>
+                        <p>Altri argomenti di interesse.</p>
+                    </div>
+                </div>
+                
+                <div class="category-posts" id="category-content">
+                    <!-- Contenuto che cambierà in base alla categoria selezionata -->
+                    <h3>Tutti gli articoli</h3>
+                    
+                    <article class="post">
+                        <h4><a href="posts/esempio-matematica.html">La bellezza delle equazioni differenziali</a></h4>
+                        <div class="post-meta">
+                            <span class="date">10 Marzo 2025</span>
+                            <span class="categories"><a href="#" data-category="matematica">Matematica</a>, <a href="#" data-category="fisica">Fisica</a></span>
+                        </div>
+                        <div class="post-excerpt">
+                            <p>In questo articolo esploriamo la soluzione dell'equazione di Schrödinger e le sue implicazioni nella meccanica quantistica...</p>
+                        </div>
+                        <a href="posts/esempio-matematica.html" class="read-more">Continua a leggere →</a>
+                    </article>
+                    
+                    <article class="post">
+                        <h4><a href="posts/esempio-secondo.html">Un altro argomento interessante</a></h4>
+                        <div class="post-meta">
+                            <span class="date">5 Marzo 2025</span>
+                            <span class="categories"><a href="#" data-category="informatica">Informatica</a></span>
+                        </div>
+                        <div class="post-excerpt">
+                            <p>Un breve riassunto di questo articolo che parla di qualcosa di completamente diverso...</p>
+                        </div>
+                        <a href="posts/esempio-secondo.html" class="read-more">Continua a leggere →</a>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Alessandro Casti</p>
+        </footer>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Ottieni la categoria dalla query string
+                const urlParams = new URLSearchParams(window.location.search);
+                const categoryParam = urlParams.get('cat');
+                
+                // Gestisci i click sulle categorie
+                const categoryLinks = document.querySelectorAll('.category-item a');
+                
+                categoryLinks.forEach(link => {
+                    // Se c'è un parametro nella URL, attiva la categoria corrispondente
+                    if (categoryParam && link.dataset.category === categoryParam) {
+                        activateCategory(link);
+                    }
+                    
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        activateCategory(this);
+                        
+                        // Aggiorna la URL senza ricaricare la pagina
+                        const cat = this.dataset.category;
+                        if (cat !== 'all') {
+                            const newUrl = `${window.location.pathname}?cat=${cat}`;
+                            history.pushState({}, '', newUrl);
+                        } else {
+                            history.pushState({}, '', window.location.pathname);
+                        }
+                    });
+                });
+                
+                function activateCategory(clickedLink) {
+                    // Rimuovi la classe active da tutti i link
+                    categoryLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Aggiungi la classe active al link cliccato
+                    clickedLink.classList.add('active');
+                    
+                    // Aggiorna il contenuto in base alla categoria
+                    const category = clickedLink.dataset.category;
+                    document.getElementById('category-content').innerHTML = `<h3>${getCategoryTitle(category)}</h3>`;
+                    
+                    // In un'applicazione reale, qui faresti una chiamata AJAX per caricare i post
+                    // della categoria selezionata o filtreresti i post già caricati
+                    
+                    // Per questo esempio, reindirizza a una pagina filtrata (da implementare)
+                    // window.location.href = `categories.html?cat=${category}`;
+                }
+                
+                function getCategoryTitle(category) {
+                    switch(category) {
+                        case 'matematica':
+                            return 'Articoli di Matematica';
+                        case 'fisica':
+                            return 'Articoli di Fisica';
+                        case 'informatica':
+                            return 'Articoli di Informatica';
+                        case 'altro':
+                            return 'Altri Argomenti';
+                        default:
+                            return 'Tutti gli articoli';
+                    }
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
